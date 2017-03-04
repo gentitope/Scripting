@@ -21,10 +21,10 @@ $token = 'd2a7c455a1bb8ea76ca63c2c9038be46443ff73d';
 //$curl_url = 'https://api.github.com/users/' . $user . '/repos';
 
 // Generate the url for curl for commits api
-//$curl_url = 'https://api.github.com/repos/' . $owner . '/' . $repo . '/git/commits/' . $sha . '';
+$curl_url = 'https://api.github.com/repos/' . $owner . '/' . $repo . '/git/commits/' . $sha . '';
 
 // Generate the url for curl for branch api
-$curl_url = 'https://api.github.com/repos/' . $owner . '/' . $repo . '/git/refs/heads/' . $branch . '';
+//$curl_url = 'https://api.github.com/repos/' . $owner . '/' . $repo . '/git/refs/heads/' . $branch . '';
 
 // Header part for the token
 $curl_token_auth = 'Authorization: token ' . $token;
