@@ -15,7 +15,7 @@ $sha = '809452715b84239fd1df336aed27a1174f7b1a63';
 
 // A token generated from github for API connection
 
-$token = 'a5e671e15acebbb06913efe7c5e63d64aa0dcc78';
+$token = 'd2a7c455a1bb8ea76ca63c2c9038be46443ff73d';
 
 // Generate the url for curl for user api
 //$curl_url = 'https://api.github.com/users/' . $user . '/repos';
@@ -35,7 +35,7 @@ $ch = curl_init($curl_url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 // curl headers
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('User-Agent: Awesome-Octocat-App', $curl_token_auth));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('User-Agent: ' . $owner . '', $curl_token_auth));
 
 // Execute the curl
 $output = curl_exec($ch);
