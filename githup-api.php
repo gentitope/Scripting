@@ -17,13 +17,13 @@ $sha = '809452715b84239fd1df336aed27a1174f7b1a63';
 
 $token = 'a5e671e15acebbb06913efe7c5e63d64aa0dcc78';
 
-// We generate the url for curl for user api
+// Generate the url for curl for user api
 //$curl_url = 'https://api.github.com/users/' . $user . '/repos';
 
-// We generate the url for curl for commits api
+// Generate the url for curl for commits api
 //$curl_url = 'https://api.github.com/repos/' . $owner . '/' . $repo . '/git/commits/' . $sha . '';
 
-// We generate the url for curl for branch api
+// Generate the url for curl for branch api
 $curl_url = 'https://api.github.com/repos/' . $owner . '/' . $repo . '/git/refs/heads/' . $branch . '';
 
 // Header part for the token
@@ -44,10 +44,7 @@ $output = curl_exec($ch);
 // Close the curl
 curl_close($ch);
 
-
-//decode the output
-//$output = json_encode($output, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT);
-
+// Print the output
 print_r($output);
 var_dump($output);
 
