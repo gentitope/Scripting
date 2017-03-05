@@ -49,3 +49,10 @@ $output = json_decode($output, true);
 //print_r($output);
 
 file_put_contents("$owner.txt", print_r($output, true));
+
+foreach($output as $k => $v {
+    echo $k: => $v;
+// to know what's in $repo_url
+    echo '<pre>';
+    var_dump($k => $v);
+}
