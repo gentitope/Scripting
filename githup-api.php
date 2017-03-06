@@ -15,7 +15,7 @@ $sha = 'd2a7c455a1bb8ea76ca63c2c9038be46443ff73d';
 
 // A token generated from github for API connection
 
-$token = 'e5b9c801ae1ccf2621fdee8d39316c33ae59e5cf';
+$token = 'f1d35d9fa3b5a814393a01760067927a0ba2004f';
 
 // Generate the url for curl for user api
 $curl_url = 'https://api.github.com/users/' . $user . '/repos';
@@ -49,3 +49,8 @@ $output = json_decode($output, true);
 //print_r($output);
 
 file_put_contents("$owner.txt", print_r($output, true));
+
+
+$repo = array_column($output, 'url');
+
+file_put_contents("repos.txt", print_r($repo, true));
