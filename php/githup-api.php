@@ -39,7 +39,11 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('User-Agent: ' . $owner . '', $curl_t
 
 // Execute the curl
 $output = curl_exec($ch);
-
+if ($output = 0) {
+    echo "command executed";
+} else {
+    die("Error: Token is invalid.");
+}
 
 // Close the curl
 curl_close($ch);
@@ -54,3 +58,5 @@ file_put_contents("$owner.txt", print_r($output, true));
 $repo = array_column($output, 'url');
 
 file_put_contents("repos.txt", print_r($repo, true));
+
+
