@@ -15,7 +15,7 @@ $sha = 'd2a7c455a1bb8ea76ca63c2c9038be46443ff73d';
 
 // A token generated from github for API connection
 
-$token = 'f1d35d9fa3b5a814393a01760067927a0ba2004f';
+$token = 'e7d9e62f2248eade835203833244ef08d6ed6ca0';
 
 // Generate the url for curl for user api
 $curl_url = 'https://api.github.com/users/' . $user . '/repos';
@@ -39,10 +39,11 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('User-Agent: ' . $owner . '', $curl_t
 
 // Execute the curl
 $output = curl_exec($ch);
-if ($output = 0) {
-    echo "command executed";
+//var_dump($output);
+if ($output == 0) {
+    echo "command executed \n";
 } else {
-    die("Error: Token is invalid.");
+    die("Error: Token is invalid. \n");
 }
 
 // Close the curl
@@ -50,13 +51,13 @@ curl_close($ch);
 
 //Get data output
 $output = json_decode($output, true);
+$content = file_get_contents('repos.txt');
 //print_r($output);
+foreach ($output as $res) {
 
-file_put_contents("$owner.txt", print_r($output, true));
-
-
-$repo = array_column($output, 'url');
-
-file_put_contents("repos.txt", print_r($repo, true));
-
+    $data = "Name : " . $res["name"] . PHP_EOL;
+    #var_dump($data);
+    $content .= $data;
+    file_put_contents("repos.txt", $content);
+}
 
